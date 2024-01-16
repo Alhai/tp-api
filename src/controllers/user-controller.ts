@@ -3,7 +3,7 @@ import { authenticateUser, createUser } from "../dals/user-dal";
 const verifyToken = require('../middleware/authMiddleware');
 const router: Router = express.Router();
 
-router.post('/register', async (req: Request, res: Response) => {
+router.post('/auth/add', async (req: Request, res: Response) => {
     try {
         const user = await createUser(req.body)
         res.status(201).json(user);
@@ -13,7 +13,7 @@ router.post('/register', async (req: Request, res: Response) => {
     }
 });
 
-router.post('/', async (req: Request, res: Response) => {
+router.post('/auth/connect', async (req: Request, res: Response) => {
     try {
         const auth = await authenticateUser(req.body)
         res.status(201).json({auth: auth})

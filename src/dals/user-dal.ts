@@ -32,7 +32,6 @@ export async function authenticateUser(userData: any): Promise<any> {
                 throw new Error('Authentication failed');
             }
             const token = jwt.sign({ userID: existUser._id }, 'secret', { expiresIn: '1d' });
-            // const userId = await User.findOne({ _id: userData })
             return token
         }
     } catch (error) {
