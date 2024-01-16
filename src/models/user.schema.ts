@@ -1,6 +1,10 @@
 
 import mongoose from "mongoose";
 
+interface User {
+    login: string;
+    password: string;
+  }
 
 const userSchema = new mongoose.Schema({
  login: { type: String, required: true },
