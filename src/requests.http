@@ -1,0 +1,33 @@
+### Inscription d'un nouvel utilisateur
+POST http://localhost:3012/auth/add
+Content-Type: application/json
+
+{
+  "login": "toto1",
+  "password": "mdp1"
+}
+
+###
+
+### Connexion d'un utilisateur
+POST http://localhost:3012/auth/connect
+Content-Type: application/json
+
+{
+  "login": "toto",
+  "password": "mdp"
+}
+
+###
+
+### Vérification du token JWT (ajouter le token obtenu après connexion)
+GET http://localhost:3012/users/check-auth
+Authorization: Bearer 
+
+###
+GET http://localhost:1337/games
+Authorization: Bearer 
+
+###
+DELETE http://localhost:1337/api/official-games/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTZhMDAyNWFlMWFjYzhlYmZlM2RkOCIsInVzZXJuYW1lIjoidG9tdG9tMSIsImVtYWlsIjoidGhvbWFzMUBnbWFpbC5jb20iLCJpYXQiOjE3MDU0MTg5NDQsImV4cCI6MTcwNTQyMjU0NH0.SsOaNaJiP28f_Pp3mCpzeHeW1vg9B-cC4qImTCxWLqU
